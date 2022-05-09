@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: upbound-infra
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: upbound
+  source:
+    repoURL: https://github.com/upbound/demos.git
+    targetRevision: HEAD
+    path: infra
+  destination:
+    server: https://proxy.upbound.io/controlPlanes/88c2c802-05c6-4314-94f7-6178ba9e8281
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true

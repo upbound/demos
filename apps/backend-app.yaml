@@ -1,0 +1,36 @@
+---
+
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: App
+metadata:
+  name: silly-demo-app
+spec:
+  id: silly-demo-app
+  compositionRef:
+    name: app-backend-db-remote
+  parameters:
+    namespace: production
+    image: vfarcic/sql-demo:0.1.10
+    port: 8080
+    host: acme.com
+    kubernetesProviderConfigName: a-team-eks
+    dbSecret:
+      name: silly-demo-db
+      namespace: upbound-system
+
+---
+
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: SQL
+metadata:
+  name: silly-demo-db
+spec:
+  id: silly-demo-db
+  compositionRef:
+    name: aws-postgresql
+  parameters:
+    version: "13.4"
+    size: small
+  writeConnectionSecretToRef:
+    name: silly-demo-db
+    namespace: upbound-system

@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
     path: infra
   destination:
-    server: https://proxy.upbound.io/controlPlanes/88c2c802-05c6-4314-94f7-6178ba9e8281
+    server: https://proxy.upbound.io/controlPlanes/da93e2e2-21cf-4666-8130-65b4a60f53f2
     namespace: default
   syncPolicy:
     automated:

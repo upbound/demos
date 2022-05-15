@@ -2,6 +2,67 @@ apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
   name: sqls.devopstoolkitseries.com
+  annotations:
+    upbound.io/ui-schema: |-
+      ---
+      configSections:
+      - title: Database Info
+        description: Information about this database.
+        items:
+        - name: id
+          controlType: singleInput
+          type: string
+          path: ".spec.id"
+          title: Database ID
+          description: Database ID that other objects will use to refer to this cluster
+          default: my-cool-database
+          validation:
+          - required: true
+            customError: Database ID is required.
+        - name: writeSecretRef
+          controlType: singleInput
+          type: string
+          path: ".spec.writeConnectionSecretToRef.name"
+          title: Connection Secret Reference
+          description: name of the secret to write to this namespace
+          default: my-cool-database-conn
+          validation:
+          - required: true
+      - title: Database Config
+        description: Configuration for this database.
+        items:
+        - name: version
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.version"
+          title: Version
+          description: The DB version depends on the DB type and versions available in the selected provider.
+          default: 14.1
+          validation:
+          - required: true
+            customError: Version is required.
+        - name: size
+          controlType: singleSelect
+          type: string
+          path: ".spec.parameters.size"
+          title: Size
+          description: Supported sizes are small, medium, and large.
+          default: small
+          enum:
+          - small
+          - medium
+          - large
+          validation:
+          - required: false
+        - name: namespace
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.namespace"
+          title: Namespace
+          description: Used only for DBs running in Kubernetes clusters.
+          default: default
+          validation:
+          - required: false
 spec:
   defaultCompositionRef:
     name: google-postgres

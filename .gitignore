@@ -1,3 +1,4 @@
 /creds
 /aws-creds.conf
+*.xpkg
 /kubeconfig*.yaml

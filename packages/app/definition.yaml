@@ -2,6 +2,95 @@ apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
   name: apps.demo.upbound.io
+  annotations:
+    upbound.io/ui-schema: |-
+      ---
+      configSections:
+      - title: App Info
+        description: Information about this cluster.
+        items:
+        - name: id
+          controlType: singleInput
+          type: string
+          path: ".spec.id"
+          title: App ID
+          description: App ID that other objects will use to refer to it.
+          default: my-cool-app
+          validation:
+          - required: true
+            customError: App ID is required.
+        - name: writeSecretRef
+          controlType: singleInput
+          type: string
+          path: ".spec.writeConnectionSecretToRef.name"
+          title: Connection Secret Reference
+          description: Name of the secret to write to this namespace.
+          default: my-cool-app-conn
+          validation:
+          - required: true
+      - title: App Config
+        description: Configuration for this application.
+        items:
+        - name: namespace
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.namespace"
+          title: Namespace
+          description: The namespace for this application.
+          default: production
+          validation:
+          - required: false
+        - name: image
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.image"
+          title: Image
+          description: The image for this application.
+          validation:
+          - required: true
+            customError: Image is required.
+        - name: port
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.port"
+          title: Port
+          description: The port for this application.
+          default: 80
+          validation:
+          - required: false
+        - name: host
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.host"
+          title: Host
+          description: The host for this application.
+          validation:
+          - required: false
+        - name: dbSecretName
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.dbSecret.name"
+          title: Database Secret Name
+          description: The name of the database secret.
+          validation:
+          - required: false
+        - name: dbSecretNamespace
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.dbSecret.namespace"
+          title: Database Secret Namespace
+          description: The namespace of the database secret.
+          validation:
+          - required: false
+        - name: kubernetesProviderConfigName
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.kubernetesProviderConfigName"
+          title: Kubernetes Provider Config Name
+          description: The name of the Kubernetes ProviderConfig.
+          default: default
+          validation:
+          - required: false
 spec:
   defaultCompositionRef:
     name: app-frontend

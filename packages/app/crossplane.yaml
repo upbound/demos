@@ -6,21 +6,13 @@ metadata:
     meta.crossplane.io/maintainer: Viktor Farcic <viktor@upbound.io>, Dan Mangum <dan@upbound.io>
     meta.crossplane.io/source: github.com/upbound/demos
     meta.crossplane.io/description: |
-      The application demo Configuration package demonstrates how to define a generic
-      SQL database resource that has multiple implementations.
+      The application demo Configuration package demonstrates how to define
+      frontend and backend applications that can connect to a database.
     meta.crossplane.io/readme: |
-      `demo-sql` is a Configuration package that defines a generic SQL database
-      resource and implementations on Google Cloud Platform (GCP), Amazon Web
-      Services (AWS), and in a local Kubernetes cluster. Consumers may select
-      from the implementations by using the
-      `spec.compositionSelector.matchLabels` with the following values:
-      - `provider: aws`: provision a PostgreSQL RDS instance on AWS with
-        supporting infrastructure.
-      - `provider: google`: provision a CloudSQL instance on GCP.
-        - `db: mysql`: use MySQL.
-        - `db: postgresql`: use PostgreSQL.
-      - `provider: local-k8s`: provision an in-cluster PostgreSQL database using
-        Helm.
+      `kubecon-demo-app` is a Configuration package that defines an App type
+      that can be used to provision frontend and backend applications in a
+      Kubernetes cluster, which optionally may connect to a local or remote
+      database.
 spec:
   crossplane:
     version: ">=v1.5"

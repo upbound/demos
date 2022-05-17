@@ -14,7 +14,7 @@ metadata:
           type: string
           path: ".spec.id"
           title: Database ID
-          description: Database ID that other objects will use to refer to this cluster
+          description: Database ID that other objects will use to refer to it.
           default: my-cool-database
           validation:
           - required: true
@@ -24,7 +24,7 @@ metadata:
           type: string
           path: ".spec.writeConnectionSecretToRef.name"
           title: Connection Secret Reference
-          description: name of the secret to write to this namespace
+          description: Name of the secret to write to this namespace.
           default: my-cool-database-conn
           validation:
           - required: true

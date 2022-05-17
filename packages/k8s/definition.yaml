@@ -4,6 +4,66 @@ metadata:
   name: compositeclusters.demo.upbound.io
   labels:
     idp: "true"
+  annotations:
+    upbound.io/ui-schema: |-
+      ---
+      configSections:
+      - title: Cluster Info
+        description: Information about this cluster.
+        items:
+        - name: id
+          controlType: singleInput
+          type: string
+          path: ".spec.id"
+          title: Cluster ID
+          description: Cluster ID that other objects will use to refer to this cluster.
+          default: my-cool-cluster
+          validation:
+          - required: true
+            customError: Cluster ID is required.
+        - name: writeSecretRef
+          controlType: singleInput
+          type: string
+          path: ".spec.writeConnectionSecretToRef.name"
+          title: Connection Secret Reference
+          description: Name of the secret to write to this namespace.
+          default: my-cool-cluster-conn
+          validation:
+          - required: true
+      - title: Cluster Config
+        description: Configuration for this cluster.
+        items:
+        - name: version
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.version"
+          title: Version
+          description: The Kubernetes version for this cluster.
+          validation:
+          - required: true
+            customError: Version is required.
+        - name: nodeSize
+          controlType: singleSelect
+          type: string
+          path: ".spec.parameters.nodeSize"
+          title: Size
+          description: Supported sizes are small, medium, and large.
+          default: small
+          enum:
+          - small
+          - medium
+          - large
+          validation:
+          - required: false
+        - name: minNodeCount
+          controlType: singleInput
+          type: string
+          path: ".spec.parameters.minNodeCount"
+          title: Minimum Node Count
+          description: Minimum number of nodes in the cluster.
+          default: 1
+          validation:
+          - required: false
 spec:
   connectionSecretKeys:
   - kubeconfig

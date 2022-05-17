@@ -79,11 +79,7 @@ metadata:
 spec:
   defaultCompositionRef:
     name: google-postgres
-<<<<<<< HEAD
-  group: upbound.io
-=======
   group: demo.upbound.io
->>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
   names:
     kind: SQL
     plural: sqls

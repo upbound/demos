@@ -1,13 +1,6 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-<<<<<<< HEAD
-  name: apps.upbound.io
-spec:
-  defaultCompositionRef:
-    name: app-frontend
-  group: upbound.io
-=======
   name: apps.demo.upbound.io
   annotations:
     upbound.io/ui-schema: |-
@@ -126,7 +119,6 @@ spec:
   defaultCompositionRef:
     name: app-frontend
   group: demo.upbound.io
->>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
   names:
     kind: App
     plural: apps

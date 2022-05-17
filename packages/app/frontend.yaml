@@ -147,11 +147,7 @@ spec:
                         name: devops-toolkit
                         port:
                           number: 80
-<<<<<<< HEAD
-                host: upbound.io
-=======
                 host: demo.upbound.io
->>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
     patches:
     - fromFieldPath: spec.id
       toFieldPath: metadata.name

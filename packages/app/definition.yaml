@@ -33,7 +33,6 @@ metadata:
           path: ".spec.compositionSelector.matchLabels[location]"
           title: Database Location
           description: Select the database location.
-          default: remote
           enum:
           - local
           - remote

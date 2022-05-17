@@ -3,6 +3,6 @@
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: crossplane-app
+  name: kubecon-demo-app
 spec:
-  package: xpkg.upbound.io/devops-toolkit/dot-application:v0.3.2
+  package: xpkg.upbound.io/upbound/kubecon-demo-app:v0.3.2

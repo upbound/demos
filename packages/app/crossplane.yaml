@@ -1,7 +1,18 @@
 apiVersion: meta.pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: dot-application
+  name: kubecon-demo-app
+  annotations:
+    meta.crossplane.io/maintainer: Viktor Farcic <viktor@upbound.io>, Dan Mangum <dan@upbound.io>
+    meta.crossplane.io/source: github.com/upbound/demos
+    meta.crossplane.io/description: |
+      The application demo Configuration package demonstrates how to define
+      frontend and backend applications that can connect to a database.
+    meta.crossplane.io/readme: |
+      `kubecon-demo-app` is a Configuration package that defines an App type
+      that can be used to provision frontend and backend applications in a
+      Kubernetes cluster, which optionally may connect to a local or remote
+      database.
 spec:
   crossplane:
     version: ">=v1.5"

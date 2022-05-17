@@ -1,7 +1,7 @@
 apiVersion: meta.pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: demo-sql
+  name: kubecon-demo-sql
   annotations:
     meta.crossplane.io/maintainer: Viktor Farcic <viktor@upbound.io>, Dan Mangum <dan@upbound.io>
     meta.crossplane.io/source: github.com/upbound/demos
@@ -9,10 +9,10 @@ metadata:
       The SQL demo Configuration package demonstrates how to define a generic
       SQL database resource that has multiple implementations.
     meta.crossplane.io/readme: |
-      `demo-sql` is a Configuration package that defines a generic SQL database
-      resource and implementations on Google Cloud Platform (GCP), Amazon Web
-      Services (AWS), and in a local Kubernetes cluster. Consumers may select
-      from the implementations by using the
+      `kubecon-demo-sql` is a Configuration package that defines a generic SQL
+      database resource and implementations on Google Cloud Platform (GCP),
+      Amazon Web Services (AWS), and in a local Kubernetes cluster. Consumers
+      may select from the implementations by using the
       `spec.compositionSelector.matchLabels` with the following values:
       - `provider: aws`: provision a PostgreSQL RDS instance on AWS with
         supporting infrastructure.

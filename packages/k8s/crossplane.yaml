@@ -2,6 +2,25 @@ apiVersion: meta.pkg.crossplane.io/v1
 kind: Configuration
 metadata:
   name: kubecon-demo-k8s
+  annotations:
+    meta.crossplane.io/maintainer: Viktor Farcic <viktor@upbound.io>, Dan Mangum <dan@upbound.io>
+    meta.crossplane.io/source: github.com/upbound/demos
+    meta.crossplane.io/description: |
+      The Kubernetes demo Configuration package demonstrates how to define a
+      generic Cluster resource that has multiple implementations.
+    meta.crossplane.io/readme: |
+      `kubecon-demo-k8s` is a Configuration package that defines a generic
+      Cluster resource and implementations on Google Kubernetes Engine (GKE),
+      Elastic Kubernetes Service (EKS), Azure Kubernetes Service (AKS), Digital
+      Ocean Kubernetes (DOK), and Civo Kubernetes. Consumers may select from the
+      implementations by using the `spec.compositionSelector.matchLabels` with
+      the following values:
+      - `provider: aws` / `cluster: eks`: provision an EKS cluster on AWS.
+      - `provider: azure` / `cluster: aks`: provision an AKS cluster on Azure.
+      - `provider: civo` / `cluster: ck`: provision a CK cluster on Civo.
+      - `provider: digital-ocean` / `cluster: dok`: provision a DOK cluster on
+      Digital Ocean.
+      - `provider: google` / `cluster: gke`: provision a GKE cluster GCP.
 spec:
   crossplane:
     version: ">=v1.5"

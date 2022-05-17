@@ -7,7 +7,11 @@ metadata:
     location: local
 spec:
   compositeTypeRef:
+<<<<<<< HEAD
     apiVersion: upbound.io/v1alpha1
+=======
+    apiVersion: demo.upbound.io/v1alpha1
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
     kind: App
   patchSets:
   - name: metadata
@@ -176,7 +180,11 @@ spec:
                         name: devops-toolkit
                         port:
                           number: 80
+<<<<<<< HEAD
                 host: upbound.io
+=======
+                host: demo.upbound.io
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
     patches:
     - fromFieldPath: spec.id
       toFieldPath: metadata.name

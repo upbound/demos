@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: sqls.upbound.io
+  name: sqls.demo.upbound.io
   annotations:
     upbound.io/ui-schema: |-
       ---
@@ -14,7 +14,7 @@ metadata:
           type: string
           path: ".spec.id"
           title: Database ID
-          description: Database ID that other objects will use to refer to this cluster
+          description: Database ID that other objects will use to refer to it.
           default: my-cool-database
           validation:
           - required: true
@@ -24,10 +24,23 @@ metadata:
           type: string
           path: ".spec.writeConnectionSecretToRef.name"
           title: Connection Secret Reference
-          description: name of the secret to write to this namespace
+          description: Name of the secret to write to this namespace.
           default: my-cool-database-conn
           validation:
           - required: true
+        - name: provider
+          controlType: singleSelect
+          path: ".spec.compositionSelector.matchLabels[provider]"
+          title: Cloud Provider
+          description: Select which cloud provider this database should be created in.
+          default: aws
+          enum:
+          - aws
+          - google
+          - local-k8s
+          validation:
+          - required: true
+            customError: Cloud provider is required.
       - title: Database Config
         description: Configuration for this database.
         items:
@@ -66,7 +79,11 @@ metadata:
 spec:
   defaultCompositionRef:
     name: google-postgres
+<<<<<<< HEAD
   group: upbound.io
+=======
+  group: demo.upbound.io
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
   names:
     kind: SQL
     plural: sqls

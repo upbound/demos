@@ -1,6 +1,10 @@
 ---
 
+<<<<<<< HEAD
 apiVersion: upbound.io/v1alpha1
+=======
+apiVersion: demo.upbound.io/v1alpha1
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
 kind: AppClaim
 metadata:
   name: silly-demo-app

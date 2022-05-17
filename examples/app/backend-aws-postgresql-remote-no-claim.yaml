@@ -1,6 +1,10 @@
 ---
 
+<<<<<<< HEAD
 apiVersion: upbound.io/v1alpha1
+=======
+apiVersion: demo.upbound.io/v1alpha1
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
 kind: App
 metadata:
   name: silly-demo-app
@@ -20,7 +24,11 @@ spec:
 
 ---
 
+<<<<<<< HEAD
 apiVersion: upbound.io/v1alpha1
+=======
+apiVersion: demo.upbound.io/v1alpha1
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160
 kind: SQL
 metadata:
   name: silly-demo-db

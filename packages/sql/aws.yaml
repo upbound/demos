@@ -8,7 +8,7 @@ metadata:
 spec:
   writeConnectionSecretsToNamespace: crossplane-system
   compositeTypeRef:
-    apiVersion: upbound.io/v1alpha1
+    apiVersion: demo.upbound.io/v1alpha1
     kind: SQL
   patchSets:
   - name: metadata

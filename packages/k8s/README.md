@@ -3,14 +3,14 @@
 ```bash
 export VERSION=v0.0.3
 
-# Replace `[...]` with the Upbound Cloud token
-export UP_TOKEN=[...]
+# Replace `[...]` with the Upbound Cloud account
+export UP_ACCOUNT=[...]
 
 up login
 
-up xpkg build --name k8s.xpkg
+up xpkg build --name app.xpkg
 
 up xpkg push \
-    --package k8s.xpkg \
-    xpkg.upbound.io/upbound/kubecon-demo-k8s:$VERSION
+    --package app.xpkg \
+    xpkg.upbound.io/$UP_ACCOUNT/kubecon-demo-k8s:$VERSION
 ```

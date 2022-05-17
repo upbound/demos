@@ -3,6 +3,10 @@
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: crossplane-sql
+  name: kubecon-demo-sql
 spec:
+<<<<<<< HEAD
   package: xpkg.upbound.io/upbound/kubecon-demo-sql:v0.0.1
+=======
+  package: xpkg.upbound.io/upbound/kubecon-demo-sql:v0.3.3
+>>>>>>> 38eca7cf4d3af3942eb3f0eedf8048a628817160

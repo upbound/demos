@@ -1,7 +1,7 @@
 ## Publish To Upbound
 
 ```bash
-export VERSION=v0.0.1
+export VERSION=v0.0.3
 
 # Replace `[...]` with the Upbound Cloud token
 export UP_TOKEN=[...]

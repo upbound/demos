@@ -1,7 +1,7 @@
 apiVersion: meta.pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: dot-application
+  name: kubecon-demo-app
 spec:
   crossplane:
     version: ">=v1.5"

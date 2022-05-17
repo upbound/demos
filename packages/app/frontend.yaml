@@ -6,7 +6,7 @@ metadata:
     type: frontend
 spec:
   compositeTypeRef:
-    apiVersion: devopstoolkitseries.com/v1alpha1
+    apiVersion: upbound.io/v1alpha1
     kind: App
   patchSets:
   - name: metadata
@@ -147,7 +147,7 @@ spec:
                         name: devops-toolkit
                         port:
                           number: 80
-                host: devopstoolkitseries.com
+                host: upbound.io
     patches:
     - fromFieldPath: spec.id
       toFieldPath: metadata.name

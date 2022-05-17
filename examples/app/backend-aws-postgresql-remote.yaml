@@ -1,13 +1,15 @@
 ---
 
 apiVersion: upbound.io/v1alpha1
-kind: App
+kind: AppClaim
 metadata:
   name: silly-demo-app
 spec:
   id: silly-demo-app
-  compositionRef:
-    name: app-backend-db-remote
+  compositionSelector:
+    matchLabels:
+      type: backend-db
+      location: remote
   parameters:
     namespace: production
     image: vfarcic/sql-demo:0.1.10
@@ -21,13 +23,15 @@ spec:
 ---
 
 apiVersion: upbound.io/v1alpha1
-kind: SQL
+kind: SQLClaim
 metadata:
   name: silly-demo-db
 spec:
   id: silly-demo-db
-  compositionRef:
-    name: aws-postgresql
+  compositionSelector:
+    matchLabels:
+      provider: aws
+      db: postgresql
   parameters:
     version: "13.4"
     size: small

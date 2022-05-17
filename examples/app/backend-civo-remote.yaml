@@ -1,6 +1,6 @@
 ---
 
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: upbound.io/v1alpha1
 kind: AppClaim
 metadata:
   name: silly-demo-app

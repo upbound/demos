@@ -76,7 +76,7 @@ kubectl create namespace a-team
 
 ```bash
 echo "
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: upbound.io/v1alpha1
 kind: ClusterClaim
 metadata:
   name: a-team-ck

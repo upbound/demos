@@ -28,6 +28,19 @@ metadata:
           default: my-cool-database-conn
           validation:
           - required: true
+        - name: provider
+          controlType: singleSelect
+          path: ".spec.compositionSelector.matchLabels[provider]"
+          title: Cloud Provider
+          description: Select which cloud provider this database should be created in.
+          default: aws
+          enum:
+          - aws
+          - google
+          - local-k8s
+          validation:
+          - required: true
+            customError: Cloud provider is required.
       - title: Database Config
         description: Configuration for this database.
         items:

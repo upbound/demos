@@ -28,6 +28,30 @@ metadata:
           default: my-cool-app-conn
           validation:
           - required: true
+        - name: location
+          controlType: singleSelect
+          path: ".spec.compositionSelector.matchLabels[location]"
+          title: Database Location
+          description: Select the database location.
+          default: remote
+          enum:
+          - local
+          - remote
+          validation:
+          - required: false
+        - name: type
+          controlType: singleSelect
+          path: ".spec.compositionSelector.matchLabels[type]"
+          title: Application Type
+          description: Select the application type.
+          default: backend-db
+          enum:
+          - backend
+          - backend-db
+          - frontend
+          validation:
+          - required: true
+            customError: Type is required.
       - title: App Config
         description: Configuration for this application.
         items:

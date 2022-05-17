@@ -30,6 +30,21 @@ metadata:
           default: my-cool-cluster-conn
           validation:
           - required: true
+        - name: provider
+          controlType: singleSelect
+          path: ".spec.compositionSelector.matchLabels[provider]"
+          title: Cloud Provider
+          description: Select which cloud provider this cluster should be created in.
+          default: aws
+          enum:
+          - aws
+          - azure
+          - civo
+          - digital-ocean
+          - google
+          validation:
+          - required: true
+            customError: Cloud provider is required.
       - title: Cluster Config
         description: Configuration for this cluster.
         items:
@@ -37,7 +52,7 @@ metadata:
           controlType: singleInput
           type: string
           path: ".spec.parameters.version"
-          title: Version
+          title: Kubernetes Version
           description: The Kubernetes version for this cluster.
           validation:
           - required: true

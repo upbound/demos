@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: sqls.devopstoolkitseries.com
+  name: sqls.demo.upbound.io
   annotations:
     upbound.io/ui-schema: |-
       ---
@@ -66,7 +66,7 @@ metadata:
 spec:
   defaultCompositionRef:
     name: google-postgres
-  group: devopstoolkitseries.com
+  group: demo.upbound.io
   names:
     kind: SQL
     plural: sqls

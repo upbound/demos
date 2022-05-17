@@ -1,6 +1,6 @@
 ---
 
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: demo.upbound.io/v1alpha1
 kind: App
 metadata:
   name: silly-demo-app
@@ -20,7 +20,7 @@ spec:
 
 ---
 
-apiVersion: devopstoolkitseries.com/v1alpha1
+apiVersion: demo.upbound.io/v1alpha1
 kind: SQL
 metadata:
   name: silly-demo-db

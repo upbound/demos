@@ -3,6 +3,6 @@
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: crossplane-k8s
+  name: kubecon-demo-k8s
 spec:
   package: xpkg.upbound.io/upbound/kubecon-demo-k8s:v0.0.3

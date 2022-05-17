@@ -1,7 +1,7 @@
 apiVersion: meta.pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: demo-sql
+  name: kubecon-demo-sql
   annotations:
     meta.crossplane.io/maintainer: Viktor Farcic <viktor@upbound.io>, Dan Mangum <dan@upbound.io>
     meta.crossplane.io/source: github.com/upbound/demos

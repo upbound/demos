@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: compositeclusters.upbound.io
+  name: compositeclusters.demo.upbound.io
   labels:
     idp: "true"
 spec:
@@ -10,7 +10,7 @@ spec:
   - value
   defaultCompositionRef:
     name: cluster-aws
-  group: upbound.io
+  group: demo.upbound.io
   names:
     kind: CompositeCluster
     plural: compositeclusters

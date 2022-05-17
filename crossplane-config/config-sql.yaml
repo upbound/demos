@@ -5,4 +5,4 @@ kind: Configuration
 metadata:
   name: kubecon-demo-sql
 spec:
-  package: xpkg.upbound.io/upbound/kubecon-demo-sql:v0.3.3
+  package: xpkg.upbound.io/upbound/kubecon-demo-sql:v0.0.5

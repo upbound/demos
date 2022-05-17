@@ -1,7 +1,7 @@
 ## Publish To Upbound
 
 ```bash
-export VERSION=v0.0.4
+export VERSION=v0.0.5
 
 up login
 

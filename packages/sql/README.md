@@ -1,10 +1,7 @@
 ## Publish To Upbound
 
 ```bash
-export VERSION=v0.3.3
-
-# Replace `[...]` with the Upbound Cloud account
-export UP_ACCOUNT=[...]
+export VERSION=v0.0.5
 
 up login
 
@@ -12,5 +9,5 @@ up xpkg build --name sql.xpkg
 
 up xpkg push \
     --package sql.xpkg \
-    xpkg.upbound.io/$UP_ACCOUNT/kubecon-demo-sql:$VERSION
+    xpkg.upbound.io/upbound/kubecon-demo-sql:$VERSION
 ```

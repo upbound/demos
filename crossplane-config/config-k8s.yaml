@@ -5,4 +5,4 @@ kind: Configuration
 metadata:
   name: kubecon-demo-k8s
 spec:
-  package: xpkg.upbound.io/upbound/kubecon-demo-k8s:v0.0.5
+  package: xpkg.upbound.io/upbound/kubecon-demo-k8s:v0.0.6
